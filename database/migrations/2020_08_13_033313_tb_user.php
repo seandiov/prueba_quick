@@ -18,7 +18,7 @@ class TbUser extends Migration
             $table->string('last_name', 30)->comment("Primer y segundo apellido del usuario");
             $table->string('email', 64)->unique('uk_user_email')->comment("Correo electronico del usuario");
             $table->string('password', 255)->comment("Clave del usuario");
-            $table->binary('token', 255)->nullable()->comment("Token de acceso de usuario");
+            $table->text('token', 255)->nullable()->comment("Token de acceso de usuario");
             $table->tinyInteger('age')->unsigned()->comment("Edad del usuario");
             $table->binary('image')->nullable()->comment("Imagen de perfil de usuario");
             $table->string('description', 255)->nullable()->comment("Descripcion de usuario");

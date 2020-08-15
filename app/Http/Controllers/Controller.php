@@ -12,6 +12,15 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     
     /**
+     * Create a new AuthController instance.
+     *
+     * @return void
+     */
+    public function __construct() {
+        $this->middleware('auth:api', ['except' => ['login']]);
+    }
+    
+    /**
      * @param $message
      * @return Response
      */
